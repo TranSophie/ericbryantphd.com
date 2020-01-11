@@ -1,0 +1,36 @@
+
+<footer class="footer">
+  <a class="footer-links">
+    &copy; {{ now.Format "2006" }} {{ .Site.Params.owner }}
+  </a>
+  <ul class="footer-links">
+    <li>
+      <a href="https://gohugo.io/" class="footer-links-kudos">
+        Hugo
+      </a>
+    </li>
+    <li>
+      <a href="https://bookdown.org/yihui/blogdown/" class="footer-links-kudos">
+        Blogdown
+      </a>
+    </li>
+        <li>
+      <a href="https://github.com/yihui/hugo-lithium" class="footer-links-kudos">
+        Lithium
+      </a>
+    </li>
+    <li>
+      <a href="{{ .Site.RSSLink | relURL }}" class="footer-links-kudos" type="application/rss+xml" target="_blank">
+        <i class="fas fa-rss" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+
+
+</footer>
+</div>
+    {{ partial "footer_highlightjs" . }}
+    {{ partial "footer_mathjax" . }}
+    {{ template "_internal/google_analytics.html" . }}
+  </body>
+</html>

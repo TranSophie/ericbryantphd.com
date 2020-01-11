@@ -1,0 +1,193 @@
+---
+title: Joining the internet
+author: Eric Edward Bryant
+date: "2019-11-01"
+modified: "2019-12-17"
+slug: joining-the-internet
+categories:
+  - R
+tags:
+  - R
+  - blogdown
+  - hugo
+---
+
+
+
+<p>🥳
+I’m finally on the internet!</p>
+<p>Why did this take so long?
+About once every year I sit down to create a website.
+Every year I discover a new tool, or framework, or hosting solution.
+I spend a day reading about all my options, build 50% of a site,
+encounter some annoying, or disappointing, or confusing, or costly
+aspect of my new site, and just decide to revisit the whole thing some other
+time.<br />
+💻🗑🔥😭</p>
+<p>This year appears to be different!
+🍾💃</p>
+<p>I knew I wanted something simple<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, stable<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, mobile-friendly<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>,
+easy to maintain<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, and ideally free<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>—bonus points if I can write
+content in <a href="https://bookdown.org/yihui/rmarkdown">rmarkdown</a>.
+This basically means I wanted a static site generator.
+Here is what I went with:</p>
+<ul>
+<li>Content management: <a href="https://bookdown.org/yihui/blogdown">blogdown</a>
+<ul>
+<li>Why? I already know how to use <a href="https://bookdown.org/yihui/rmarkdown">rmarkdown</a>. Yay!</li>
+</ul></li>
+<li>Source code management: <a href="https://github.com">GitHub</a>
+<ul>
+<li>Why? I already know how to use <a href="https://github.com">GitHub</a>. Yay!</li>
+</ul></li>
+<li>Hosting and deployment: <a href="https://www.netlify.com">Netlify</a>
+<ul>
+<li>Why? It was recommended by the <a href="https://bookdown.org/yihui/blogdown">blogdown</a> book.
+I am <em>very</em> pleased with this recommendation.</li>
+</ul></li>
+</ul>
+<div id="setting-everything-up" class="section level2">
+<h2>Setting everything up</h2>
+<p>After browsing the <a href="https://bookdown.org/yihui/blogdown">blogdown</a> book, I decided it looked simple enough, so
+I went ahead and installed the package and initialized my site.</p>
+<pre class="r"><code>install.packages(&quot;blogdown&quot;)
+blogdown::new_site()
+# blogdown::serve_site() # serve a preview of the website!</code></pre>
+<p>In the current working directory, this creates all the files necessary
+for your new site, and imports the theme.
+The most relevant files for my purposes are listed below.</p>
+<pre><code>config.toml
+content/
+themes/hugo-lithium/
+  layouts/
+  static/</code></pre>
+<p>The <code>config.toml</code> is a fairly simple configuration file in <a href="https://github.com/toml-lang/toml">toml</a> format
+(like yaml, but not).
+It had some fairly obvious fields that I played around with to see what
+they changed.</p>
+<p>The <code>content</code> directory is where content lives (imagine that!) in markdown,
+or Rmarkdown files.
+Content placed under <code>content/posts/</code> gets included in the blog section of the
+site.
+Adding a new post is quick and easy with <code>blogdown::new_post()</code>, or using the
+neat RStudio addin (<code>Blogdown/New post</code>).</p>
+<p>There were a few things I wanted to change about the default layout, so I
+looked into customizing the theme a little bit.
+This part took the longest as I’m not a web-developer, and I’m a first-time
+user of the <a href="https://gohugo.io">hugo</a> static website generator.
+For me, the key was realizing that those <code>layout</code> and <code>static</code> directories can
+be overridden by directories of the same name in the top level of the project.</p>
+<p>I decided to override the <code>layout/partials/footer.html</code> with my own version
+that just adds a copyright and a couple extra list elements to link blogdown
+and the theme I am using.
+My changes look roughly like this:</p>
+<pre class="html"><code>&lt;footer class=&quot;footer&quot;&gt;
+...
+&amp;copy; {{ now.Format &quot;2006&quot; }} {{ .Site.Params.owner }}
+...
+&lt;li&gt;
+  &lt;a href=&quot;https://bookdown.org/yihui/blogdown/&quot; class=&quot;footer-links-kudos&quot;&gt;
+    Blogdown
+  &lt;/a&gt;
+&lt;/li&gt;
+...</code></pre>
+<p>The curly braces are used by <a href="https://gohugo.io">hugo</a> for templating.
+Quite frankly, I don’t entirely understand all the details here,
+but I do know that this allows me to have my name (as specified in
+an <code>owner</code> entry in <code>config.toml</code>) inserted next to the current year.
+Cool!</p>
+<p>At this point I wanted to update the navigation bar.
+Changing the logo was as simple as adding my own logo into <code>static/images</code>
+and changing the url under <code>[params.logo]</code>.
+The section headings felt like they needed icons, so I looked into including
+<a href="https://fontawesome.com">fontawesome</a> icons in my site.
+The first thing I needed to do was add the fontawesome CSS to my <code>static/css</code>
+directory and the fonts to <code>static/webfonts</code> (the fontawesome CSS points
+to the fonts with <code>../webfonts/</code>, so I assume the name and location of this
+folder is important).
+Then after poking around in the theme’s HTML partials, I saw something that
+suggested I should be able to add custom CSS through <code>config.toml</code>, but
+I failed to figure that out,
+🤦
+so I just overrode <code>head.html</code> and added the following line beneath the other
+CSS entries.
+Not super elegant, but it works!
+🤷</p>
+<pre class="html"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ &quot;css/fontawesome.css&quot; | relURL }}&quot;&gt;</code></pre>
+<p>Then, to get icons in my navigation bar I ended up having to override
+<code>layouts/partials/nav.html</code>.
+I replaced this:</p>
+<pre class="html"><code>{{ range .Site.Menus.main }}
+&lt;li&gt;&lt;a href=&quot;{{ .URL }}&quot;&gt;{{ .Name }}&lt;/a&gt;&lt;/li&gt;
+{{ end }}</code></pre>
+<p>With this:</p>
+<pre class="html"><code>{{ range .Site.Menus.main }}
+  &lt;li style=&quot;text-align:center;&quot; class=&quot;nav-link&quot;&gt;
+    &lt;a href=&quot;{{ .URL }}&quot; &gt;
+      &lt;i class=&quot;{{ .Pre }}&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+      &lt;br&gt;
+      &lt;small&gt;{{ .Name }}&lt;/small&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+{{ end }}</code></pre>
+<p>Now I can add sections with icons using <code>config.toml</code> with entries like this:</p>
+<pre class="toml"><code>[[menu.main]]
+    name = &quot;CV&quot;
+    identifier = &quot;cv&quot;
+    pre = &quot;fas fa-address-card&quot;
+    url = &quot;/cv/&quot;
+    weight = 1</code></pre>
+<p>And when I want to include an icon somewhere else, I use the following
+(I lookup the name of the icon at <a href="https://fontawesome.com">fontawesome</a>):</p>
+<pre class="html"><code>&lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;</code></pre>
+<p>The last thing I wanted to do was change the homepage.
+By default, the theme places posts on the homepage, but I wanted to have
+a landing page to introduce myself.
+I poked around the hugo documentation, and figured out that I could get what
+I wanted by creating <code>layouts/home.html</code> with the following content:</p>
+<pre class="html"><code>{{ partial &quot;header.html&quot; . }}
+&lt;main class=&quot;content&quot; role=&quot;main&quot;&gt;
+  &lt;div class=&quot;article-content&quot;&gt;
+    &lt;!-- Note the content for here pulls from content/_index.html --&gt;
+    {{ .Content }}
+  &lt;/div&gt;
+&lt;/main&gt;
+{{ partial &quot;footer.html&quot; . }}</code></pre>
+<p>I now have a (mostly empty) homepage that I can edit in <code>content/_index.Rmd</code>!</p>
+<p>Phew! That was a lot for me.
+To be fair, I didn’t <em>need</em> to do all this customization,
+but, all this playing makes me feel like I kinda know how my site works,
+and so far I’m pretty happy with the results.</p>
+</div>
+<div id="going-live" class="section level2">
+<h2>Going live!</h2>
+<p>Getting the site on the web ended up being way easier than I expected.
+I just put the project on <a href="https://github.com">GitHub</a>, and went to <a href="https://www.netlify.com">Netlify</a>.
+There I logged in via GitHub (super convenient!) and clicked on
+“New site from Git”.</p>
+<p><img src="/images/2019-12-netlify.png" style="width:80.0%" /></p>
+<p>The interface on Netlify was super clear.
+You are given a subdomain on Netlify, so you can stop at this point for
+a completely free solution.
+But I had already purchased a domain, so the last thing I had to do was point
+my domain name to Netlify and, boom!
+We’re live!</p>
+<p>I want to give a huge thanks to the developers of <a href="https://gohugo.io">hugo</a>, <a href="https://bookdown.org/yihui/blogdown">blogdown</a>,
+<a href="https://github.com/yihui/hugo-lithium">lithium</a>, <a href="https://fontawesome.com">fontawesome</a>, <a href="https://github.com">GitHub</a> and <a href="https://www.netlify.com">Netlify</a> for helping me build a
+website!
+And a special thanks to <a href="https://yihui.org/en">Yihui Xie</a> for writing the <a href="https://bookdown.org/yihui/blogdown">blogdown</a> book—it was
+easy to follow and had just the right amount of detail for me.
+😄</p>
+<p>If you have any questions about my setup, or just want to say hi, message me on
+<a href="https://twitter.com/ericedwrdbryant"><i class="fab fa-twitter"></i> Twitter</a>!</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>“Simple” in my case just means I get a landing page, a page for my CV, and a page for new ongoing content<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>“Stable” just means that I can let my site sit for years and it will still work without intervention. I have always wanted a blog to neglect and I will be very happy when someone 10 years from now says, “wow, your website is <em>very</em> 2019”<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>“Mobile-friendly” just means Eric’s-phone-friendly<a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>“Easy to maintain” just means I can use technologies that I already know (e.g. R, markdown, git, GitHub—keep the HTML, CSS, JS, PHP to a minimum please!)<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>“Free” as in less than half the cost of a Netflix subscription<a href="#fnref5" class="footnote-back">↩</a></p></li>
+</ol>
+</div>

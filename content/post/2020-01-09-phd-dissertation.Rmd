@@ -1,0 +1,790 @@
+---
+title: "Systems genetics of DNA damage tolerance"
+subtitle: "Cisplatin, RAD5 & CRISPR-mediated nonsense"
+author: "Eric Edward Bryant"
+date: "2020-01-09"
+slug: "phd-dissertation"
+bibliography: 
+  - ../../static/references/library.bib
+  - ../../static/references/thesis.bib
+link-citations: yes
+output: blogdown::html_page
+categories:
+  - Dissertation
+tags:
+  - Dissertation
+  - Thesis
+  - "My publications"
+---
+
+[Abstract]: #abstract
+[Preface]: #preface
+[Discussion]: #discussion
+[PhD thesis]: https://doi.org/10.7916/d8-k1d0-kb09
+[Chapter 1]: https://doi.org/10.7916/d8-k1d0-kb09
+[Chapter 2]: https://www.ncbi.nlm.nih.gov/pubmed/31350889
+[Chapter 3]: https://www.ncbi.nlm.nih.gov/pubmed/28890334
+[Chapter 2, Figure 1]: https://academic.oup.com/view-large/figure/163637130/gkz631fig1.jpg
+[Chapter 2, Figure 2]: https://academic.oup.com/view-large/figure/163637138/gkz631fig2.jpg
+
+
+The following post includes the [Abstract], [Preface] and [Discussion] from my
+[PhD thesis] dissertation [@2019-01-Bryant].
+I have included them here as a convenient starting-point for sharing my
+dissertation work.
+
+- **[Abstract]** -- a high level summary of my thesis.
+- **[Preface]** -- an historical and personal introduction to each
+  chapter of my thesis.
+- **[Discussion]** -- informal lessons and insights gained during my
+  dissertation work.
+- **[Chapter 1]** -- _Epistasis and cisplatin tolerance_ -- 
+  currently available in the published thesis [@2019-01-Bryant].
+- **[Chapter 2]** -- _Genomic repercussions of RAD5 overexpression_ --
+  published and open-access [@2019-09-Bryant-Reid].
+- **[Chapter 3]** -- _CRISPR-mediated nonsense_ --
+  published and open-access [@2017-09-Billon-Bryant-Ciccia].
+
+
+Abstract {-}
+===============================================================================
+
+DNA sequence information is constantly threatened by damage.
+In the clinic, intentional DNA damage is often used to treat cancer.
+Cisplatin, a first-line chemotherapy used to treat millions of patients,
+functions specifically by generating physical links within DNA strands, 
+blocking DNA replication, and killing dividing cells.
+To maintain genome integrity, organisms have evolved the capacity to repair,
+respond, or otherwise resist change to the DNA sequence through a network of
+genetically encoded DNA damage tolerance pathways.
+In [chapter 1], I present advances in experimental design and
+current progress for a systems genetics approach, using _Saccharomyces
+cerevisiae_, to reveal relationships between cisplatin tolerance pathways.
+Additionally, recent efforts to sequence thousands of cancer genomes have
+revealed recurrent genetic changes that cause overexpression of specific
+cisplatin tolerance genes.
+In [chapter 2], I present a submitted manuscript that models
+overexpression of an essential cisplatin tolerance gene.
+This study uses a systems genetics approach to reveal the genetic pathways
+that are essential for tolerating this perturbation, which ultimately led
+to mechanistic insights for this gene.
+Convenient genome engineering in _Saccharomyces_ has made this organism an
+ideal model to develop systems genetics concepts and approaches.
+In [chapter 3], I present a published manuscript that demonstrates
+a new approach to disrupting genes by making site-specific nonsense
+mutations.
+Importantly, this approach does not require cytotoxic double-strand DNA
+breaks and is applicable to many model organisms for disrupting almost any
+gene, which may advance systems genetics into new model organisms.
+Systems genetics provides a framework for determining how DNA damage
+tolerance pathways act together to maintain cellular fitness and genome
+integrity.
+Such insights may one day help clinicians predict which cancers will respond
+to treatment, potentially sparing patients from unnecessary chemotherapy.
+
+
+Preface {-}
+===============================================================================
+
+Deoxyribonucleic acid (DNA) holds the instructions for life on Earth.
+Its code consists of only four letters --
+Adenine (A), Guanine (G), Thymine (T) and Cytosine (C) --
+the sequence of which determines ribonucleic acids (RNA) to be
+transcribed, and proteins to be translated in living cells
+[@2005-02-Dahm; @1944-02-Avery-McCarty; @1961-12-Crick-WattsTobin;
+@1966-00-Nirenberg-Anderson].
+Transcribing DNA into RNA and translating RNA into protein forms the
+foundation for the central dogma of molecular biology
+[@1970-08-Crick],
+which emphasizes an important feature of DNA -- its sequence can store the
+information necessary to reproduce the chemistry of life.
+This feature, along with fortuitous structural properties
+[@1953-04-Watson-Crick],
+makes DNA a molecule that can not only reproduce the chemistry of life, but can
+also be reliably copied and passed to the next generation.
+However, to reliably and faithfully pass DNA to the next generation, cells
+must overcome a constant barrage of DNA damage [@1993-04-Lindahl].
+Fortunately, the genomes of most cells contain instructions to build a large
+number of proteins that can work together to repair broken DNA, or enable
+DNA damage tolerance [@2016-01-Cleaver].
+This genetically encoded capacity for cells to maintain genome integrity and
+viability in the face of damaged DNA is the focus of my thesis.
+In particular, I am interested in understanding how cells resist treatment to
+the DNA damaging agent, cisplatin -- one of several platinum-based
+chemotherapeutic drugs that have been used to treat cancer in millions of
+patients
+[@2005-00-Galanski-Keppler; @2000-01-Simon-Friend; @2004-06-Wu-Brown;
+@2007-08-Kelland].
+
+Decades of work by geneticists have revealed DNA damage tolerance to consist of
+hundreds of genes that operate in numerous pathways that collectively enable
+cells to resist DNA lesions caused by cisplatin treatment
+[reviewed by @2010-10-Ciccia-Elledge; @2010-00-Heyer; @2018-09-Rocha].
+While the mechanisms for many of the major pathways responsible for cisplatin
+tolerance are well established, how these genetic pathways relate to each
+other as a system to maintain fitness and DNA integrity when responding to
+cisplatin treatment remains poorly understood.
+Moreover, many individual genes known to affect cellular fitness of cisplatin
+treated cells have no known role in any of the major cisplatin tolerance
+pathways.
+And, while much is known about how loss of individual gene function can affect
+cisplatin tolerance, recent efforts to genomically characterize thousands of
+tumors has revealed recurrent DNA copy number amplification events that can
+result in overexpression of specific genes [@2008-10-TCGA].
+The genomic repercussions of gene overexpression, and how this could alter
+cisplatin tolerance, remains a largely unexplored area in genetics.
+
+The work described here attempts to address some of these unexplored and poorly
+understood aspects of DNA damage tolerance using systems genetics approaches.
+**[Chapter 1]**, describes the experimental design and current
+results for an ongoing collaborative effort to map all cisplatin specific DNA
+damage tolerance pathway relationships by systematically measure fitness of
+double-mutants to identify genetic interactions
+(i.e. double-mutant combinations that cause an unexpected change in fitness).
+**[Chapter 2]**, is a submitted manuscript that utilizes a genetic
+interaction profile to reveal the genomic repercussions of _RAD5_
+overexpression, one of the most important cisplatin tolerance genes, whose
+human homolog is frequently overexpressed in specific cancers.
+**[Chapter 3]**, is a published manuscript that describes a new
+approach to efficiently disrupt the function of genes, which will open new
+avenues for studying the systems genetics of DNA damage tolerance in a diverse
+range of organisms.
+An introduction to the scientific and thesis context for each chapter is
+provided below in
+**[Chapter 1 introduction](#intro-cispt)**,
+**[Chapter 2 introduction](#intro-rad5)** &
+**[Chapter 3 introduction](#intro-istop)**.
+Ultimately, understanding the fundamental genetic determinants of cisplatin
+tolerance may one day help clinicians predict which cancers will respond to
+cisplatin treatment, thus informing treatment decisions, and sparing patients
+from unnecessary chemotherapy [@2015-11-Connor].
+
+
+Epistasis and cisplatin tolerance {#intro-cispt}
+-------------------------------------------------------------------------------
+
+The field of genetics seeks to answer one simple question -- how does DNA
+sequence, combined with environmental exposure, result in the observable
+features of an organism?
+In other words, how does genotype, plus environment, produce
+phenotype?
+Historically, geneticists have approached the "genotype to phenotype" question
+systematically using genetic screens.
+In such screens, changes to an organism's DNA sequence would be made randomly
+using some kind of DNA damaging agent to produce mutants.
+Mutants that gained the phenotype of interest would be cataloged, and the
+tedious process of characterizing each mutant allele to identify the
+causative DNA sequence change would commence.
+The classic genetic screen began to lose prominence with the advent of
+high-throughput sequencing technologies that allowed scientists to produce
+the first complete sequence assemblies for the human genome and several
+model organisms
+[@2001-02-Lander-IHGSC].
+Having sequenced a genome, scientists could computationally predict all
+of an organism's protein coding genes -- no known phenotype was necessary.
+Researchers could now perform their genetic screens in reverse.
+Instead of asking, "given a phenotype, what are the alleles?" scientists
+could now ask, "given the alleles, what are the phenotypes?"
+Thus, the reverse genetic screen was born.
+
+Geneticists studying the budding yeast, _Saccharomyces cerevisiae_, were early
+adopters of the reverse genetic screen, which first required the construction
+of a large collection of defined alleles.
+Only a few short years after sequencing the yeast genome, every gene in yeast
+had been individually deleted to produce the non-essential gene disruption
+collection
+[@1999-08-Winzeler-Davis; @2002-07-Giaever-Johnston].
+Remarkably, of the 6,000 protein coding genes in the yeast genome,
+approximately 5,000 were _not_ essential for the organism to survive, which
+left a big open question -- are these genes important for anything?
+The reverse genetic screen was the perfect tool for quickly answering this
+question.
+After exposing this strain collection to over 350 different chemicals, a
+group of researchers reassuringly found that indeed these genes were
+important, as 97% of genes showed a growth defect, or advantage, in at least
+one treatment condition
+[@2008-04-Hillenmeyer-Giaever].
+This reverse genetic screening strategy, known as chemogenomic profiling,
+when used with a comprehensive collection of gene deletions, produces a list,
+or "profile", of genes that contribute to fitness when treated with a
+particular chemical.
+Importantly, information gained from chemogenomic profiling is a two-way
+street; as we learn more about gene function, a chemogenomic profile can tell
+us something about the biological impact of the chemical or treatment itself. 
+For example, early genetic screens in yeast from the 1960s and 1970s had
+already identified genes that are essential to tolerate exposure to
+ultraviolet, x-ray, and gamma radiation
+[@1967-09-Snow; @1968-00-Cox-Parry; @1971-05-Lemontt; @1974-09-Game-Mortimer].
+These genes were given names starting with "_RAD_" and given a number
+(e.g. _RAD3_, _RAD6_, _RAD52_, etc.).
+Later work had determined that many of the _RAD_ genes produced proteins that
+performed various DNA repair processes to combat DNA damage
+[@1981-00-Haynes-Kunz].
+With this knowledge of _RAD_ gene function in mind, when we generate a new
+chemogenomic profile for an uncharacterized compound and find that its profile
+includes many _RAD_ genes, we can infer that this new compound likely causes
+DNA damage.
+Thus, the more knowledge we have of gene function, the more powerful
+chemogenomic profiling becomes.
+
+Cisplatin, being a critically important and clinically relevant drug, received
+plenty of attention during the heyday of chemogenomic profiling
+[@2002-06-Birrell-Brown; @2004-06-Wu-Brown; @2005-08-Lee-Giaever;
+@2005-07-Huang-Kowalski; @2006-07-Hastie-Cohen; @2007-02-Liao-Panaretou].
+However, while chemogenomic profiling has identified over 100 genes in yeast
+that are important for cisplatin tolerance, this list of genes does not tell
+us the biological process, or pathway, in which each gene participates.
+Moreover, a chemogenomic profile alone cannot tell us how the collection of
+pathways that affect fitness in response to cisplatin relate to each other as
+a complete system.
+For this, we leverage the power of double-mutants to identify which genes have
+shared contributions, or compensatory contributions to cisplatin sensitivity.
+This strategy was elegantly used by
+@1973-09-Brendel-Haynes
+to group genes known at the time to be involved in DNA repair into three major
+pathways, later defined as the _RAD3_, _RAD6_ and _RAD52_ epistasis groups.
+An epistasis group, in this context, refers to a set of mutations that share a
+contribution to the phenotype of DNA damage tolerance and can thus be grouped
+into shared damage tolerance pathways.
+Epistasis itself is a class of genetic interaction, a relationship between two
+genetic perturbations, that geneticists use to determine pathway membership.
+In the context of fitness, epistasis is most often observed when two
+deleterious genetic perturbations result in better fitness than expected when
+the two perturbations are combined.
+Thus, for clarity, I often describe such epistasis as a positive fitness
+interaction.
+In addition to identifying positive fitness interactions, double-mutant
+analysis can also identify negative fitness interactions -- pairs of mutations
+that cause worse than expected fitness and indicate that each gene contributes
+to fitness in parallel compensatory pathways.
+
+The major limitation to double-mutant analysis is time and energy.
+For example, in yeast, with a collection of 5,000 non-essential gene
+deletions, a researcher would have to perform approximately 12.5 million
+crosses to identify all possible fitness interactions among these gene
+deletions for a single treatment condition.
+Remarkably, after developing the Synthetic Genetic Array (SGA) method,
+researchers managed to use cleverness and robotics to produce a genetic
+interaction profile for nearly every gene deletion in budding yeast
+[@2001-12-Tong-Boone; @2006-00-Tong-Boone; @2006-03-Pan-Boeke;
+@2010-01-Costanzo-Boone; @2010-12-Baryshnikova-Myers].
+The combined interaction profiles generate an interaction network that
+represents the genetic landscape of _Saccharomyces cerevisiae_
+[@2017-00-Usaj-Boone; @2016-00-Costanzo-Boone].
+
+Unfortunately, this genetic landscape only reveals genetic relationships for
+pathways that contribute to fitness in standard laboratory conditions.
+To produce this network for the same drug treatment conditions used by
+@2008-04-Hillenmeyer-Giaever to reveal a phenotype for nearly every single gene
+deletion, one would have to phenotype all 12.5 million crosses 350 times,
+generating over 4 billion measurements.
+Even worse, gene deletions are only one type of genetic perturbation.
+To generate an interaction landscape for every single nucleotide change in
+yeast, and for 350 treatment conditions, one would need to generate more than
+a quadrillion fitness measurements (>10^15^).
+Needless to say, a more focused approach for characterizing pathway
+relationships for genes involved in cisplatin tolerance is warranted.
+The strategy here is simple -- focus on a set of genes that share a phenotype
+as single mutants and only generate crosses among this small set of genes.
+This strategy, when combined with SGA, is known as epistatic mini-array
+profiling, or E-MAP
+[@2005-11-Schuldiner-Krogan; @2006-00-Collins-Weissman;
+@2006-12-Schuldiner-Krogan; @2007-04-Collins-Krogan;
+@2009-03-Fiedler-Krogan; @2013-08-Braberg-Krogan].
+And, when combined with a treatment it is referred to as a differential E-MAP,
+or dE-MAP
+[@2007-02-Onge-Giaever; @2010-12-Bandyopadhyay-Ideker;
+@2013-01-Gunol-vanAttikum; @2013-12-Srivas-Ideker; @2015-01-Hustedt-Gasser]
+
+**[Chapter 1]** presents an advancement in the experimental design
+for a cisplatin dE-MAP.
+Currently published dE-MAPs typically use only one, or two, fixed
+concentrations of drug treatment.
+However, detectable sensitivity for cisplatin tolerance mutants ranges across
+nearly two orders of magnitude of cisplatin concentration.
+For example, the most sensitive mutants, _rad5∆_, _rad6∆_ and _rad18∆_, have a
+measurable phenotype at 2 µM cisplatin, and are completely dead at 25 µM.
+Whereas, _psy4∆_, a gene named for cisplatin sensitivity, has a barely
+detectable phenotype at 80 µM.
+To measure a genetic interaction, ideally the experiment uses a treatment
+condition where at least one of the two mutations has a phenotype, and neither
+mutation causes death.
+Therefore, to optimize detection of genetic interactions, we use a common
+"low" concentration where most strains will remain viable, and an optimized
+"high" concentration that produces a phenotype of the query mutation -- the
+gene deletion being crossed to the mini-array of cisplatin tolerance genes.
+While this project remains ongoing, we have successfully used this strategy to
+produce a high-resolution set of genetic interactions covering 70% of the
+cisplatin tolerance network.
+
+
+Genomic repercussions of _RAD5_ overexpression {#intro-rad5}
+-------------------------------------------------------------------------------
+
+When I began my PhD, I spent a few months meeting with
+professors looking for scientific inspiration.
+Having a background in _de novo_ gene synthesis, I was naturally drawn to the
+topic of DNA recombination and repair, so I set up a meeting with Professor
+Rodney Rothstein -- a leader in this field.
+During our meeting, Rodney described a project that had nothing to do with DNA
+repair.
+Instead, he described an ongoing project in his lab that aimed to identify
+genetic interactions that could be used to treat cancer.
+Fundamentally, the project was an extension of the genetic screening for
+cancer drug targets approach described by
+@1997-11-Hartwell-Friend.
+The described approach attempts to address a major problem in the current
+strategy for treating cancers, which is that typical chemotherapy and
+radiation treatment programs have many dangerous side-effects because they do
+not specifically kill cancer cells, rather they preferentially kill all
+dividing cells.
+The logic of the genetic approach described by Hartwell, begins with the
+observation that there are numerous recurring genetic alterations that are
+observed in cancer, which represent an an attack surface for selectively
+killing cancer cells.
+Geneticists had long observed a phenomenon they called synthetic lethality,
+wherein combining two otherwise harmless mutations results in cell death
+(i.e. an extreme example of a negative fitness genetic interaction).
+So the theory goes, if a cancer has a mutation and we know the synthetic
+lethal interactions of that mutation, then we can selectively target the
+cancer cell by inhibiting a synthetic lethal interactor with a drug.
+This drug would selectively kill only cancer cells harboring the interacting
+mutation, while leaving normal cells unharmed.
+Remarkably, this approach has received some traction with the development of
+clinically approved PARP inhibitors, which exploit a synthetic lethal genetic
+interaction between _PARP_ and commonly observed mutations in the breast
+cancer susceptibility genes, _BRCA1_ and _BRCA2_
+[@2018-09-Ashworth-Lord; @2015-00-Lord-Ashworth].
+Needless to say, I found the synthetic lethality approach to targeted cancer
+therapy to be incredibly interesting, so I asked to join the Rothstein lab.
+
+The first major challenge to using synthetic lethality for treating cancer is
+to identify common genetic alterations in cancer.
+Then, by pairing these common genetic alterations with a collection of mutant
+strains one can identify synthetic lethal interactions.
+When I started in the Rothstein lab, the project I joined was attempting to
+leverage yeast genetics to identify synthetic lethal interactions for genes
+that are commonly overexpressed in PTEN deficient cancer.
+After performing a number of these genetic screens, it became clear that the
+data we were using to identify these overexpressed genes could not distinguish
+between genes that are overexpressed in individual cells, and genes that are
+just overrepresented in the population of cells used to measure expression
+(e.g. S-phase regulated genes will be overrepresented in a sample that has
+more dividing cells).
+Sadly, this issue undermined the initial motivation for performing my first
+synthetic lethal screens.
+Undeterred, I looked to other sources to find data for frequent genetic
+alterations in cancer.
+Around this time, The Cancer Genome Atlas consortium [@2008-10-TCGA] had
+released data for thousands of genomically characterized tumors.
+Importantly, these data included not only gene expression information, but
+also copy number information.
+After diving into the data, it became clear that each cancer cohort had
+distinct patterns of recurrent focal and chromosomal copy number
+amplifications resulting in overexpression of specific genes.
+Importantly, because gene copy number amplification is a physical change that
+occurs within individual cells, the change in expression could be attributed
+to an actual increase in transcript levels within cells rather than just a
+population level change.
+
+In **[Chapter 2]**, I present a submitted manuscript that was
+motivated by the observation that the _RAD5_ human homolog, _HLTF_, incurs
+frequent copy number amplification and corresponding overexpression in several
+types of human cancer (typically squamous cell carcinoma).
+_RAD5_ is a member of the most essential cisplatin tolerance pathway, and,
+when overexpressed, we found that Rad5 bypasses canonical regulatory signals
+to cause cisplatin sensitivity and genome instability by driving hyperactive
+recombination at replication forks.
+
+
+CRISPR-mediated nonsense {#intro-istop}
+-------------------------------------------------------------------------------
+
+Yeast has been an ideal model organism for studying genetic interactions at
+scale to identify genetic determinants of phenotype, and to reveal pathway
+relationships between genes.
+One reason yeast has achieved such traction as a genetic model arises from the
+ease with which scientists can modify the yeast genome in the lab.
+The ability to make targeted changes in an organism's genome emerged from
+pioneering work in the field of genetic recombination, which led to the
+development of one-step gene disruption -- a fast and efficient approach to
+knockout a gene
+[@1983-01-Rothstein; @1993-07-Baudin-Cullin; @1994-12-Wach-Philippsen].
+Eventually, with the release of the _S. cerevisiae_ genome
+[@1996-10-Goffeau-Oliver; @1991-01-Goffeau-Vassarotti] --
+the first complete DNA sequence assembly of any eukaryotic organism --
+work began to construct a comprehensive collection of yeast knockout mutants
+representing nearly all of the roughly 5,000 non-essential genes found in
+budding yeast
+[@1999-08-Winzeler-Davis; @2002-07-Giaever-Johnston].
+This collection paved the way for the development of reverse genetic
+screening approaches, which utilize a large set of defined mutants to
+identify those that give rise to a particular phenotypic feature, such as
+cisplatin sensitivity (see **[Chapter 1]**), or a genetic interaction
+profile (see **[Chapter 2]**).
+In principle, one-step gene disruption should be feasible in any recombination
+proficient organism, which includes most of the tree of life.
+In fact, adaptation of the one-step gene disruption approach in mice was the
+basis of the 2007 Nobel Prize in Physiology or Medicine
+[@2007-10-Vogel; @1990-06-Koller-Smithies; @1990-04-Zijlstra-Jaenisch;
+@1989-11-Koller-Smithies; @1989-11-Zijlstra-Jaenisch],
+and the mouse genetics community has followed suit in sequencing the mouse
+genome
+[@2002-12-Waterston],
+and constructing their own large collections of knockout mice
+[@2006-06-Grimm].
+However, one-step gene disruption, and other recombination mediated genome
+engineering methods, rely on rare DNA repair events, rendering these approaches
+inefficient in most organisms -- entire PhDs could be dedicated to
+constructing a single knockout mouse.
+Thus, at the beginning of my PhD in the fall of 2011, yeast remained a
+dominant model in the field of systems genetics and was the focus of my
+research on the genetic relationships between cisplatin tolerance pathways and
+the genetic repercussions of _RAD5_ overexpression.
+
+However, in the spring of 2013, when I was working as a teaching assistant for
+Professor Ron Prywes and Professor Songtao Jia's course in molecular biology,
+a fellow teaching assistant, Ling Ye, informed me of a new advancement in the
+field of genome engineering that he was sure would change the future of
+genetics research.
+This new advancement in genome engineering technology that Ling described to
+me is the now famous CRISPR-Cas9 system, which has indeed changed the face of
+genetics and biomedical research
+[@2012-08-Jinek-Charpentier; @2012-09-Gasiunas-Siksnys;
+@2011-03-Deltcheva-Charpentier; @2011-11-Sapranauskas-Siksnys;
+@2010-11-Garneau-Moineau; @2013-02-Cong-Zhang; @2013-02-Mali-Church].
+The elegance of the CRISPR-Cas9 system for genome engineering is that it
+consists of a single protein (Cas9) and a short programmable guide RNA that
+targets Cas9 to a specific location in the genome where, upon recognition of
+the target sequence, it will generate a DNA double-strand break (DSB).
+
+Suddenly, that rare DNA repair event necessary for recombination mediated
+genome engineering could be efficiently induced, opening up new avenues for
+modifying the genomes of almost any organism.
+Moreover, this simple system was amenable to simple modifications which allowed
+scientists to localize other proteins to specific DNA sequences without causing
+DNA breaks.
+Using this approach,
+@2016-05-Komor-Liu
+and others, modified the CRISPR system to localize an enzyme that would
+directly convert cytosines (C) to thymines (T) in a small window of five
+nucleotides near the guide targeted sequence without having to create a DSB --
+an attractive feature for those interested in modifying cells that might
+already be deficient in DNA repair.
+When this system, known as CRISPR-mediated base editing, was first described, I
+had recently begun a collaboration with Dr. Alberto Ciccia's lab to help with
+sequence analysis for a pilot run of a CRISPR-Cas9 based reverse genetic
+screen.
+Dr. Ciccia and a postdoctoral research associate in his lab, Dr. Pierre
+Billon, realized that CRISPR-mediated base editing of C to T could be used to
+disrupt gene function by converting four specific codons to premature stop
+codons in protein coding genes.
+What was unclear though, was whether this approach for knocking out gene
+function would be generalizable given the limited number of targetable codons
+and other technical restrictions dictated by the CRISPR system.
+
+**[Chapter 3]** is a published manuscript I co-authored with Dr.
+Billon and Dr. Ciccia addressing the scope and feasibility of CRISPR-mediated
+base editing for disrupting gene function
+[@2017-09-Billon-Bryant-Ciccia].
+The title of the original publication -- _CRISPR-mediated base editing enables
+efficient disruption of eukaryotic genes through induction of STOP codons
+(iSTOP)_ -- sums up the ultimate conclusion; CRISPR-mediated C to T base
+editors allow DSB free induction of stop codons at 23 different codons per
+gene on average
+(i.e. 1 iSTOP targetable codon for every 26 codons in the human genome).
+Thus, iSTOP provides a new tool alongside CRISPR-Cas9, and classic one-step
+gene disruption, that no longer relies on DSBs and recombination to
+efficiently knockout gene function.
+iSTOP, and other gene editing tools, will enable scientists to look beyond the
+humble baker's yeast, to many other branches of life, to gain insight from
+systems genetics into the genetic determinants of life.
+
+
+Discussion
+===============================================================================
+
+Genome integrity is essential for organisms to faithfully pass genetic
+information to future generations.
+While genomic DNA is constantly subject to damage, organisms have evolved
+numerous mechanisms to maintain sequence information and allow replication of
+their genomes despite this damage.
+Defects in DNA damage tolerance pathways, either inherited from birth, or
+acquired during the life of an organism, can result in numerous diseases such
+as Fanconi anemia, xeroderma pigmentosum, ataxia telangiectasia, Nijmegen
+breakage, Cockayne, Werner & Bloom syndromes [@2012-08-Knock-Berneburg].
+In addition to these diseases, defects in DNA damage tolerance often arise
+during the development of cancer.
+Perhaps the best known examples of this are mutations in the breast cancer
+susceptibility genes, _BRCA1_ and _BRCA2_, which are both thought to be
+involved in homology directed repair
+[@2011-12-Roy-Powell; @2013-02-Zhang].
+By leveraging knowledge of genetic interactions, new drugs have been developed
+to selectively kill cancers harboring mutations in _BRCA_ genes by exploiting
+synthetic lethality between _PARP_ and _BRCA_
+[@2015-00-Lord-Ashworth; @2018-09-Ashworth-Lord].
+Long before it became clear that many cancers harbor mutations in DNA repair
+pathways, oncologists have treated patients with DNA damage through radiation
+and chemotherapy.
+As DNA sequencing costs have dropped, ever more tumors are being sequenced
+to identify common mutations and changes in gene expression, which has led to
+an increased appreciation that the status of DNA damage tolerance pathways in
+tumors can have a profound effect on a tumor's response to our most common
+cancer therapies
+[@2013-08-Alexandrov-Stratton; @2014-08-Dietlein-Reinhardt].
+As insight into the DNA damage tolerance network develops, strategies for
+selectively killing repair deficient tumors with drug combinations designed
+to target redundancies in the repair network are beginning to emerge
+[@2013-04-Cheng-Halmos; @2017-11-Nickoloff-Hromas].
+While some tumors respond well to radiation and DNA damaging chemotherapies,
+many tumors either do not respond, or acquire resistance to such treatments.
+This phenomenon underscores the importance of determining how the genetic
+landscape of a tumor impacts the overall damage tolerance network.
+The emerging field of systems genetics
+[@2017-01-Baliga-Vonesch],
+and specifically the study of genetic interaction networks,
+offers an important perspective for researchers and clinicians trying to
+understand how the DNA damage tolerance network enables tumor evolution while
+maintaining cancer cell viability.
+The structure of this network can enable precision medicine by providing
+critical insights into pathway organization that can reveal tumor specific
+genetic weaknesses [@1997-11-Hartwell-Friend].
+Below, I will discuss some lessons and insights from my work on the systems
+genetics of DNA damage tolerance -- a stepping stone on the long path to
+precision medicine in oncology.
+
+
+Epistasis: undetected ≠ nonexistent
+-------------------------------------------------------------------------------
+
+In **[Chapter 1]**, I presented progress toward constructing a
+genetic landscape for the cisplatin tolerance network in _Saccharomyces_.
+The design of this experiment advances the dE-MAP approach for detecting
+treatment specific pathway membership, and overall pathway relationships
+[@2010-12-Bandyopadhyay-Ideker; @2012-01-Ideker-Krogan].
+Specifically, we took advantage of the null model for genetic interactions of
+colony fitness to account for the fact that detection of genetic relationships
+between two alleles critically depends on the phenotype of each allele
+(**[Chapter 1], Figure 2**).
+While this fact has been understood by geneticists for decades, it has some
+unappreciated and important consequences for interpreting existing genetic
+interaction networks.
+Perhaps the most important consequence of requiring a phenotype to detect
+epistasis is that an undetected interaction is _not_ equivalent to no
+interaction.
+In fact, conspicuous absence of an expected synergistic interaction may be
+weak evidence for epistasis in an as yet unknown treatment condition.
+Two epistatic alleles will _not_ show any genetic interaction if neither allele
+has a phenotype in the tested condition.
+To detect the genetic relationship between these alleles necessitates
+identification of a condition that generates a phenotype for at least one
+allele.
+This limitation does not exist for synergistic alleles, which can account for
+the fact that the number of negative genetic interactions far exceed the
+number of positive genetic interactions in the genetic landscape of
+_S. cerevisiae_
+[@2016-00-Costanzo-Boone].
+For our dE-MAP, we treated mutants with optimized concentrations of cisplatin
+to enhance detection of both positive and negative genetic interactions.
+The current network supports the notion that nucleotide excision repair (NER)
+is the primary pathway responsible for _repairing_ cisplatin lesions.
+However, the lesion _bypassing_ postreplication repair (PRR) pathway appears
+to coordinate at least three critical nodes in the cisplatin tolerance
+network, and is thus the most essential pathway for maintaining fitness in the
+presence of cisplatin.
+While our network was able to reveal these insights, it is clear that, even
+with optimized treatment conditions, detecting epistasis remains challenging
+using the dE-MAP approach alone.
+An approach to overcome this limitation may be to use the conspicuous absence
+of genetic interactions between otherwise highly correlated interaction
+profiles to pick pairs of alleles for further fitness analysis using a
+quantitative spot assay and a full cisplatin titration.
+
+
+TCGA, BioGRID & The Cell Map: insights from public data
+-------------------------------------------------------------------------------
+
+Rad5, a member of PRR, was the focus of **[Chapter 2]**.
+During a visit with Dr. Karlene Cimprich, she mentioned that there was
+some evidence that the _RAD5_ homolog, _HLTF_, was overexpressed
+in cancer (also noted in the discussion by @2015-06-Kile-Cimprich).
+We therefore turned to publicly available sequencing data from The Cancer
+Genome Atlas (TCGA) using software that enabled programmatic access to
+gene-level summaries of this data
+[@2008-10-TCGA; @cgdsr; @2012-05-Cerami-Schultz; @2013-04-Gao-Schultz].
+Indeed, the _RAD5_ homolog, was frequently amplified and overexpressed in
+several classes of squamous cell carcinomas.
+This data-driven insight motivated the study of the genomic repercussions of
+_RAD5_ overexpression.
+By screening the yeast gene disruption and temperature-sensitive mutant
+collections we identified a clear signature of genetic requirements for _RAD5_
+overexpression.
+This signature led us to the discovery that, when overexpressed, Rad5 can
+bypass canonical PRR regulatory signals to cause hyperactive recombination at
+replication forks.
+This hyperactive recombination is also accompanied by genome instability and
+cisplatin sensitivity.
+
+What was especially fascinating about the _RAD5_ story was that both deletion
+and overexpression caused cisplatin sensitivity, but only overexpression could
+drive recombination.
+This distinction was revealed by a careful comparison of the _RAD5_
+overexpression and deletion genetic interaction profiles.
+To compare interaction profiles, I used publicly available data from the
+BioGRID interaction database [@2006-01-Stark], and I developed a landscape
+enrichment analysis that uses easily accessible genetic interaction data from
+The Cell Map
+[@2017-00-Usaj-Boone; @2016-00-Costanzo-Boone; @2008-11-Maaten]
+(**[Chapter 2, Figure 1] &**
+**[Chapter 2], Methods: Landscape enrichment analysis**).
+This landscape enrichment analysis proved to be an intuitive way to visualize
+pathway enrichment for a genetic interaction profile, and allowed facile
+exploration of the genetic landscape to address questions such as, "what
+interactions are conspicuously absent?"
+In the case of _rad5∆_, interactions with crossover resolution
+(e.g. _top3_ & _sgs1∆_)
+were clearly absent even though many of the mutant alleles in that region of
+the landscape had been identified as having negative fitness interactions with
+_rad5∆_
+(**[Chapter 2, Figure 2]**).
+Here, I would like to highlight that, in constructing our cisplatin dE-MAP, we
+also observed no interaction between _rad5∆_ and crossover resolution in the
+untreated network, but, when we treated with cisplatin, we observed epistasis
+-- an example of conspicuous absence of synergy as weak evidence for epistasis
+(**[Chapter 1], Figure 4**)!
+Revealing the _rad5∆ sgs1∆_ epistasis interaction in untreated conditions was
+possible, but only when using a very sensitive low-throughput method
+(**[Chapter 2, Figure 2]**).
+
+
+Landscape enrichment: embracing perplexity
+-------------------------------------------------------------------------------
+
+As mentioned above, the landscape enrichment analysis from
+**[Chapter 2, Figure 1]C** enabled facile exploration of publicly
+available genetic interaction networks.
+This analysis is similar to Systematic Functional Annotation and Visualization
+of Biological Networks (SAFE), described by @2016-06-Baryshnikova, but differs
+in its approach to dimension reduction
+(i.e. the two-dimensional clustering approach used to generate the
+"landscape").
+The implementation presented in the SAFE publication uses a spring-embedded
+network layout, whereas the landscape presented for the _RAD5_ chapter was
+generated using t-SNE
+[@2008-11-Maaten].
+The t-SNE method for dimension reduction is best summarized by Laurens van der
+Maaten himself (https://lvdmaaten.github.io/tsne), which can take an
+$A \times N$ matrix and reduce it to an $A \times 2$ matrix where the two
+dimensions attempt to preserve local similarities between the profiles of $A$.
+For generating the genetic landscape of _Saccharomyces cerevisiae_, rows in
+the matrix ($A$) are genes, and columns in the matrix ($N$) are genetic
+profile correlation values.
+Importantly, $N$ can be any number of features that might provide information
+for generating clusters of genes or alleles.
+Thus, the landscape enrichment approach can be easily adapted to integrate
+other sources of data, and could be used to integrate existing biological
+information to generate a genetic landscape for human genes.
+t-SNE is lauded for its ability to reveal structure at many different scales.
+An example of this can be seen in
+**[Chapter 2, Figure 1]C middle and right**, where zooming in on the
+dominant cluster, reveals additional local clustering of HDR, DNA replication,
+and crossover resolution.
+When viewing a t-SNE map it is important to be aware of the limitations of the
+approach, and avoid some common misinterpretations, nicely described by
+@2016-00-Wattenberg-Johnson.
+Notably, relative distances between clusters on the landscape are largely
+meaningless.
+Clusters may appear on opposite sides of the landscape, but this does not mean
+they are more dissimilar than a distinct cluster present half-way across the
+landscape.
+t-SNE also has a parameter, called "perplexity", which loosely corresponds to
+the expected number of members in a major cluster.
+This parameter can have a major impact on clustering and must be lower than
+the number of rows in the matrix  (i.e. the size of $A$, or the number of
+genes). 
+Recommended values are between 5 and 50.
+The default value of perplexity for the implementation of t-SNE in the R
+programming language is 30 [@Rtsne], and, unaware of its meaning, my first
+attempt to run t-SNE on a matrix with only 29 rows resulted in the following
+message, "`Error: Perplexity is too large`." After a brief existential crisis,
+I lowered the perplexity, which resulted in beautiful clustering similar to
+that observed in
+**[Chapter 1], Figure 6**.
+Paraphrasing a comment from Dr. Eugene Koonin on the quality of clusters,
+"you know them when you see them."
+
+
+Quantifying spots: replacing the drop assay
+-------------------------------------------------------------------------------
+
+When working with high-throughput genetics, validating results is essential.
+This often involves strain verification, back-crossing, and low-throughput
+recapitulation of high-throughput observations using a gold-standard assay.
+For yeast colony growth, owing mostly to simplicity and familiarity, the
+serial dilution drop assay reigns supreme.
+The serial dilution drop assay certainly works well for detecting obvious
+fitness defects.
+However, when combining multiple alleles to confirm potentially modest genetic
+interactions, the qualitative nature of the drop assay quickly becomes a
+burden, leading to more eye-squinting and head-scratching than insight.
+For the _RAD5_ manuscript we developed a quantitative colony growth assay
+for generating high-resolution colony fitness estimates
+(**[Chapter 2, Figure 1]D &**
+**[Chapter 2], Methods: Genome-wide identification of SDL interactions**).
+In my experience, this assay is able to resolve fitness differences as small
+as 5%.
+A good example of this resolution can be seen in
+**[Chapter 2, Figure 2]B**.
+While the effect is small, a significant positive interaction was detected
+between _rad5∆_ and _sgs1∆_ in standard laboratory growth conditions --
+additional evidence for epistasis between _rad5∆_ and crossover resolution
+without requiring cisplatin treatment!
+The quantitative colony growth assay, while low in throughput, is
+essential for validating our genetic observations from high-throughput
+approaches like SGA and SPA.
+With the CRISPR revolution beginning to produce combinatorial reverse genetic
+screens, it will be greatly beneficial for the systems genetics community to
+develop high-resolution validation approaches that are not subject to some of
+the biases that can occur in these pooled screening approaches
+[@2017-06-Shen-Mali; @2016-09-Sack-Elledge].
+
+
+The CRISPR revolution: systems genetics in new model systems
+-------------------------------------------------------------------------------
+
+Reverse genetic screens in mammalian cell lines have been possible through
+high-throughput RNA interference experiments for nearly twenty years
+[@2004-01-Carpenter-Sabatini].
+Work in this field has progressed methods for performing pooled screening
+experiments to score fitness changes from a single transfected culture, wherein
+loss or gain of library representation is detected through next-generation
+sequencing
+[@2011-10-Sims-Lord].
+Initially, such experiments incurred high sequencing costs, and were plagued
+by off-target effects and many irreproducible results
+[@2013-11-Bhinder-Djaballah].
+While these limitations have largely been overcome through reduced sequencing
+costs, formalized analysis pipelines, and improved experimental design
+[@2018-00-Schaefer-Potratz],
+the arrival of CRISPR appears to have taken functional genomics in mammalian
+cells a major step forward
+[@2016-06-Evers-Bernards].
+The favored approach for CRISPR based screens currently appears to be using
+Cas9 to induce double-strand breaks that, when improperly repaired, can result
+in small insertions and deletions, potentially resulting in frameshift
+mutations that may cause nonsense and gene disruption.
+In **[Chapter 3]**, I presented a new CRISPR method, called iSTOP, that
+allows direct generation of programmable nonsense without requiring a
+double-strand break and mutagenic repair.
+This feature may enable iSTOP to overcome the high levels of cell lethality
+caused by Cas9-induced double-strand breaks
+[@2018-07-Haapaniemi-Taipale; @2018-07-Ihry-Kaykas].
+Importantly, for studying the DNA damage tolerance network in model systems
+beyond yeast, iSTOP may avoid confounding effects caused by requiring repair
+machinery to disrupt genes while simultaneously knocking out repair pathways.
+For this reason, I look forward to analyzing results from experiments
+comparing pooled screens using standard Cas9 and iSTOP.
+
+
+References
+===============================================================================

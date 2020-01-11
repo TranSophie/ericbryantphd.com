@@ -1,0 +1,238 @@
+---
+title: Joining the internet
+author: Eric Edward Bryant
+date: "2019-11-01"
+modified: "2019-12-17"
+slug: joining-the-internet
+categories:
+  - R
+tags:
+  - R
+  - blogdown
+  - hugo
+---
+
+[blogdown]: https://bookdown.org/yihui/blogdown
+[rmarkdown]: https://bookdown.org/yihui/rmarkdown
+[hugo]: https://gohugo.io
+[lithium]: https://github.com/yihui/hugo-lithium
+[GitHub]: https://github.com
+[Netlify]: https://www.netlify.com
+[toml]: https://github.com/toml-lang/toml
+[fontawesome]: https://fontawesome.com
+[Yihui Xie]: https://yihui.org/en
+
+`r emoji("partying_face")`
+I'm finally on the internet!
+
+Why did this take so long?
+About once every year I sit down to create a website.
+Every year I discover a new tool, or framework, or hosting solution.
+I spend a day reading about all my options, build 50% of a site,
+encounter some annoying, or disappointing, or confusing, or costly
+aspect of my new site, and just decide to revisit the whole thing some other 
+time.\
+`r emoji("computer", "wastebasket", "fire", "sob")`
+
+This year appears to be different!
+`r emoji("champagne", "dancing")`
+
+I knew I wanted something simple[^1], stable[^2], mobile-friendly[^3],
+easy to maintain[^4], and ideally free[^5]---bonus points if I can write
+content in [rmarkdown].
+This basically means I wanted a static site generator.
+Here is what I went with:
+
+[^1]: "Simple" in my case just means I get a landing page, a page for my CV, and a page for new ongoing content
+[^2]: "Stable" just means that I can let my site sit for years and it will still work without intervention. I have always wanted a blog to neglect and I will be very happy when someone 10 years from now says, "wow, your website is _very_ 2019"
+[^3]: "Mobile-friendly" just means Eric's-phone-friendly
+[^4]: "Easy to maintain" just means I can use technologies that I already know (e.g. R, markdown, git, GitHub---keep the HTML, CSS, JS, PHP to a minimum please!)
+[^5]: "Free" as in less than half the cost of a Netflix subscription
+
+- Content management: [blogdown]
+  - Why? I already know how to use [rmarkdown]. Yay!
+- Source code management: [GitHub]
+  - Why? I already know how to use [GitHub]. Yay!
+- Hosting and deployment: [Netlify]
+  - Why? It was recommended by the [blogdown] book.
+    I am _very_ pleased with this recommendation.
+
+## Setting everything up
+
+After browsing the [blogdown] book, I decided it looked simple enough, so 
+I went ahead and installed the package and initialized my site.
+
+```r
+install.packages("blogdown")
+blogdown::new_site()
+# blogdown::serve_site() # serve a preview of the website!
+```
+
+In the current working directory, this creates all the files necessary
+for your new site, and imports the theme.
+The most relevant files for my purposes are listed below.
+
+```
+config.toml
+content/
+themes/hugo-lithium/
+  layouts/
+  static/
+```
+
+The `config.toml` is a fairly simple configuration file in [toml] format
+(like yaml, but not).
+It had some fairly obvious fields that I played around with to see what
+they changed.
+
+The `content` directory is where content lives (imagine that!) in markdown, 
+or Rmarkdown files.
+Content placed under `content/posts/` gets included in the blog section of the
+site.
+Adding a new post is quick and easy with `blogdown::new_post()`, or using the
+neat RStudio addin (`Blogdown/New post`).
+
+There were a few things I wanted to change about the default layout, so I
+looked into customizing the theme a little bit.
+This part took the longest as I'm not a web-developer, and I'm a first-time
+user of the [hugo] static website generator.
+For me, the key was realizing that those `layout` and `static` directories can
+be overridden by directories of the same name in the top level of the project.
+
+I decided to override the `layout/partials/footer.html` with my own version
+that just adds a copyright and a couple extra list elements to link blogdown
+and the theme I am using.
+My changes look roughly like this:
+
+```html
+<footer class="footer">
+...
+&copy; {{ now.Format "2006" }} {{ .Site.Params.owner }}
+...
+<li>
+  <a href="https://bookdown.org/yihui/blogdown/" class="footer-links-kudos">
+    Blogdown
+  </a>
+</li>
+...
+```
+
+The curly braces are used by [hugo] for templating.
+Quite frankly, I don't entirely understand all the details here,
+but I do know that this allows me to have my name (as specified in 
+an `owner` entry in `config.toml`) inserted next to the current year.
+Cool!
+
+At this point I wanted to update the navigation bar.
+Changing the logo was as simple as adding my own logo into `static/images`
+and changing the url under `[params.logo]`.
+The section headings felt like they needed icons, so I looked into including
+[fontawesome] icons in my site.
+The first thing I needed to do was add the fontawesome CSS to my `static/css`
+directory and the fonts to `static/webfonts` (the fontawesome CSS points
+to the fonts with `../webfonts/`, so I assume the name and location of this
+folder is important).
+Then after poking around in the theme's HTML partials, I saw something that
+suggested I should be able to add custom CSS through `config.toml`, but
+I failed to figure that out,
+`r emo::ji("person_facepalming")`
+so I just overrode `head.html` and added the following line beneath the other
+CSS entries.
+Not super elegant, but it works!
+`r emo::ji("person_shrugging")`
+
+```html
+<link rel="stylesheet" href="{{ "css/fontawesome.css" | relURL }}">
+```
+
+Then, to get icons in my navigation bar I ended up having to override
+`layouts/partials/nav.html`.
+I replaced this:
+
+```html
+{{ range .Site.Menus.main }}
+<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+{{ end }}
+```
+
+With this:
+
+```html
+{{ range .Site.Menus.main }}
+  <li style="text-align:center;" class="nav-link">
+    <a href="{{ .URL }}" >
+      <i class="{{ .Pre }}" aria-hidden="true"></i>
+      <br>
+      <small>{{ .Name }}</small>
+    </a>
+  </li>
+{{ end }}
+```
+
+Now I can add sections with icons using `config.toml` with entries like this:
+
+```toml
+[[menu.main]]
+    name = "CV"
+    identifier = "cv"
+    pre = "fas fa-address-card"
+    url = "/cv/"
+    weight = 1
+```
+
+And when I want to include an icon somewhere else, I use the following
+(I lookup the name of the icon at [fontawesome]):
+
+```html
+<i class="fab fa-github"></i>
+```
+
+The last thing I wanted to do was change the homepage.
+By default, the theme places posts on the homepage, but I wanted to have
+a landing page to introduce myself.
+I poked around the hugo documentation, and figured out that I could get what
+I wanted by creating `layouts/home.html` with the following content:
+
+```html
+{{ partial "header.html" . }}
+<main class="content" role="main">
+  <div class="article-content">
+    <!-- Note the content for here pulls from content/_index.html -->
+    {{ .Content }}
+  </div>
+</main>
+{{ partial "footer.html" . }}
+```
+
+I now have a (mostly empty) homepage that I can edit in `content/_index.Rmd`!
+
+Phew! That was a lot for me.
+To be fair, I didn't _need_ to do all this customization,
+but, all this playing makes me feel like I kinda know how my site works,
+and so far I'm pretty happy with the results.
+
+## Going live!
+
+Getting the site on the web ended up being way easier than I expected.
+I just put the project on [GitHub], and went to [Netlify].
+There I logged in via GitHub (super convenient!) and clicked on
+"New site from Git".
+
+![](/images/2019-12-netlify.png){width="80%"}
+
+The interface on Netlify was super clear.
+You are given a subdomain on Netlify, so you can stop at this point for 
+a completely free solution.
+But I had already purchased a domain, so the last thing I had to do was point
+my domain name to Netlify and, boom!
+We're live!
+
+I want to give a huge thanks to the developers of [hugo], [blogdown],
+[lithium], [fontawesome], [GitHub] and [Netlify] for helping me build a
+website!
+And a special thanks to [Yihui Xie] for writing the [blogdown] book---it was
+easy to follow and had just the right amount of detail for me.
+`r emo::ji("smile")`
+
+If you have any questions about my setup, or just want to say hi, message me on
+[<i class="fab fa-twitter"></i> Twitter](https://twitter.com/ericedwrdbryant)!
