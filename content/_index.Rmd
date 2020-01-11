@@ -14,8 +14,8 @@ author: Eric Edward Bryant
 
 <div style="text-align:center">
 [<i class="fas fa-envelope"></i> Email](mailto:EricBryantPhD@gmail.com) /
-[<i class="fab fa-github"></i> Github](https://github.com/ericedwardbryant) /
-[<i class="fab fa-twitter"></i> Twitter](https://twitter.com/ericedwrdbryant)\
+[<i class="fab fa-github"></i> Github](https://github.com/EricBryantPhD) /
+[<i class="fab fa-twitter"></i> Twitter](https://twitter.com/EricBryantPhD)\
 [<i class="fab fa-researchgate"></i> ResearchGate](https://www.researchgate.net/profile/Eric_Bryant) /
 [<i class="fab fa-orcid"></i> ORCID](https://orcid.org/0000-0002-4648-654X)
 </div>
@@ -36,106 +36,3 @@ If you would like to know more about my thesis work, please see my post on
 the [systems genetics of DNA damage tolerance](2020/01/09/phd-dissertation), 
 which includes links to relevant publications and informal introductions to the
 topics covered in my dissertation.
-
-# What I am looking for in my 
-
----
-<!--- Not included in html output when in YAML block
-I am interested in using genetic interactions to develop a reasoned
-understanding of how and why cancers respond to chemotherapy.
-I became interested in this field of research prior to coming to Columbia
-University while working at Gene Oracle – a small biotech startup specializing
-in de-novo gene synthesis.
-While at Gene Oracle, I helped design and execute approaches for constructing
-massive mutant libraries for use in proprietary genetic interaction assays.
-After two years at Gene Oracle I decided I wanted to pursue studies of genetic
-interactions in the context of DNA replication & repair with a focus on lesions
-common to cancer.
-This interest led me to my current role as a graduate student research
-assistant in the lab of Rodney Rothstein.
-Rodney is a leader in the field of DNA repair and, at the time of joining his
-lab, work had begun developing a cost-effective pipeline for identifying
-genetic interactions relevant to cancer, similar to the interaction found
-between PARP inhibitors and BRCA mutant cancers.
-Rodney’s lab has given me the encouragement, flexibility and guidance to
-develop an expertise in bioinformatics, genomics, and large-scale data analysis
-that is essential for deriving insights from our pipeline.
-My work over the last couple of years has resulted in several exciting leads,
-of which, I have chosen to focus on studying the mechanism of HLTF (RAD5)
-dosage interactions as this protein is commonly amplified & overexpressed in
-cancer, is functionally conserved in our model system and plays a critical role
-in tolerance to DNA replication blocking drugs commonly used to treat cancer.
-With help from the TRANSFORM TL1 grant, I have been working to transition my
-work from a yeast model to a model more closely related to humans in an attempt
-to translate my knowledge of genetic interaction networks, DNA replication &
-repair, and genomics to clinically relevant insights.
-I have established a fruitful collaboration with my TL1 co-mentor, Alberto
-Ciccia, who also studies DNA replication and repair, but in human cell lines
-using cutting edge genetic tools.
-This collaboration has resulted in one co-first author paper on the application
-of double-strand break free methods of CRISPR-mediated base editing for
-generating nonsense mutations.
-This work is a valuable step towards improving methods for modeling loss of
-function mutations in models that are not as genetically tractable as yeast –
-my current model system. We are now working to expand this study from the
-perspective of reversing clinically relevant nonsense mutations.
-
-My pre-doctoral research is focused on applying synthetic genetic interaction
-networks as a tool for rational development of precision therapeutics.
-For example, in a paper published in the summer of 2016, our lab used yeast as
-a model to study the genetic consequences of CKS1 overexpression.
-In this study, we characterized the yeast synthetic dosage lethal (SDL) genetic
-interaction signature for yeast CKS1, and found that CKS1 overexpression
-requires a functional polo-like kinase (PLK).
-My contribution to this work involved leveraging data from The Cancer Genome
-Atlas and publicly available shRNA screens performed on large panels of
-cancer cells lines to determine whether there was corroborating evidence for a
-conserved CKS1-PLK SDL interaction in human cells.
-Indeed, CKS1 amplification and corresponding overexpression rarely occurs in
-patient samples with low levels of PLK.
-Emboldened by this corroborating evidence, we then confirmed that CKS1
-overexpression sensitized human cells to a known PLK inhibitor, and, as
-predicted by our genetic interaction network, PLK inhibition and WEE1
-inhibition were antagonistic (for details, see Reid, et al. 2016). 
-
-Recently, I have been working on a similar story modeling the consequences of
-RAD5 overexpression.
-Here we found that RAD5 overexpression causes a requirement for homologous
-recombination (HR) and sensitizes cells to replication blocking agents such as
-cisplatin.
-Interestingly, mutations in either of two major functional domains of RAD5 did
-not eliminate the requirement for HR.
-Undeterred, I pursued a poorly studied domain of RAD5 with a published partial
-structure from the human ortholog - HLTF.
-After homology modeling, I performed a set of focused alanine scans and
-determined two essential residues that, when mutated, eliminate the requirement
-for HR and relieve sensitivity to cisplatin.
-We have recently identified the mechanism of RAD5’s SDL interactions in that
-RAD5 overexpression results in remodeling of DNA replication forks into
-structures that require cross-over resolution.
-
-In collaboration with the Ciccia lab at CUMC’s cancer center, I have worked on
-a feasibility study for applying CRISPR mediated base editing as a means for
-introducing premature stop codons without having to cut DNA.
-We have determined that nearly 99% of human transcripts can be engineered with
-an early stop codon, with a targetable site occurring approximately once every
-25 amino acid residues.
-Our paper discusses several applications of this technology to modeling human
-diseases, especially in cancer where somatic mutations introduce premature stop
-codons in many different genes and recurrently in common tumor suppressors.
-As a follow-up to this paper we are studying the contribution of nonsense
-mutations in human disease and developing tools and resources to help
-researchers identify whether a particular nonsense mutation is amenable to
-base-editing approaches for stop codon reversal.
-
-Finally, in addition to the premature stop codon work in the Ciccia lab, I am
-also contributing to the bioinformatic analysis of a large set of CRISPRi/a
-experiments designed to reveal the genomic requirements for sensitivity and
-resistance to DNA damaging agents commonly used to treat cancer.
-This work complements a cisplatin epistasis map we are working on in the
-Rothstein lab.
-I look forward to taking the lessons and skills I have learned from working
-with yeast and applying them to human cells in a productive collaboration with
-the Ciccia lab.
---->
-...
