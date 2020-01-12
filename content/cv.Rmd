@@ -47,29 +47,6 @@ knitr::opts_knit$set(root.dir = here::here())
 -------------------------------------------------------------------------------
 
 
-# <i class="fas fa-file-download"></i> Downloads
-
-<i class="far fa-file-pdf"></i>
-```{r echo = FALSE}
-xfun::embed_file(
-  "static/documents/CV-Eric-Edward-Bryant-PhD.pdf",
-  name = "CV-Eric-Edward-Bryant-PhD.pdf",
-  text = 'CV (.pdf)'
-)
-```
-\ /\ \ <i class="far fa-file-alt"></i>
-```{r echo = FALSE}
-xfun::embed_file(
-  "static/references/library.bib",
-  name = "eric-edward-bryant.bib",
-  text = 'References (.bib)'
-)
-```
-
-
--------------------------------------------------------------------------------
-
-
 # <i class="fas fa-graduation-cap"></i> Education
 
 2011---2018
@@ -258,3 +235,27 @@ xfun::embed_file(
     [PMCID: PMC5068864](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5068864)
     --
     [DOI: 10.1534/genetics.116.190231](https://doi.org/10.1534/genetics.116.190231)
+
+
+
+-------------------------------------------------------------------------------
+
+
+# <i class="fas fa-file-download"></i> Downloads
+
+<i class="far fa-file-pdf"></i>
+```{r echo = FALSE}
+xfun::embed_file(
+  "static/documents/CV-Eric-Edward-Bryant-PhD.pdf",
+  name = "CV-Eric-Edward-Bryant-PhD.pdf",
+  text = 'CV (.pdf)'
+)
+```
+\ /\ \ <i class="far fa-file-alt"></i>
+```{r echo = FALSE}
+xfun::embed_file(
+  "static/references/library.bib",
+  name = "eric-edward-bryant.bib",
+  text = 'References (.bib)'
+)
+```
