@@ -730,7 +730,7 @@ burden, leading to more eye-squinting and head-scratching than insight.
 For the _RAD5_ manuscript we developed a quantitative colony growth assay
 for generating high-resolution colony fitness estimates
 (**[Chapter 2, Figure 1]D &**
-**[Chapter 2], Methods: Genome-wide identification of SDL interactions**).
+**[Chapter 2], Methods: Colony growth and fitness measurements**).
 In my experience, this assay is able to resolve fitness differences as small
 as 5%.
 A good example of this resolution can be seen in
