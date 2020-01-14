@@ -25,6 +25,11 @@ a {
   outline: none;
 }
 
+.section-anchor {
+  font-size: 0.6em;
+  vertical-align: super;
+}
+
 hr {
   width: 150px;
   margin: auto;
