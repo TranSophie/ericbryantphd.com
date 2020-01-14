@@ -22,6 +22,10 @@ author: Eric Edward Bryant
 
 -------------------------------------------------------------------------------
 
+<span class="article-date">
+Updated 2020-01-13
+</span>
+
 Having recently completed my PhD at Columbia University, I am excited to
 announce that...
 
