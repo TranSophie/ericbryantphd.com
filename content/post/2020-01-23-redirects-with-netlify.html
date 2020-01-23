@@ -1,0 +1,66 @@
+---
+title: Redirects with netlify
+author: ''
+date: '2020-01-23'
+slug: redirects-with-netlify
+categories: [netlify]
+tags: [netlify, redirects]
+---
+
+
+
+<!-- Twitter post formatting script -->
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>I recently saw this tweet from <a href="https://djnavarro.net">Danielle Navarro</a> about
+purchasing a domain to serve redirects to important links.</p>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+Possibly the most ridiculous thing I've spent $14/year on… buying <a href="https://djnavarro.link">djnavarro.link</a> so that I can have my own personal link shortening service. Because <a href="https://djnavarro.link/scholar">djnavarro.link/scholar</a><br><br>is a much nicer link to my Google Scholar profile and at least I can remember the damn thing
+</p>
+— Danielle Navarro (<span class="citation">@djnavarro</span>) <a href="https://twitter.com/djnavarro/status/1219867040946589698?ref_src=twsrc%5Etfw">January 22, 2020</a>
+</blockquote>
+<p>What a great idea!
+I’m pretty sure I will never memorize
+<a href="https://orcid.org/0000-0002-4648-654X" class="uri">https://orcid.org/0000-0002-4648-654X</a>, so it would be nice to have something
+easier to share.
+But, I don’t want to purchase a separate domain.
+💸😭</p>
+<p>Fear not, <a href="https://robjhyndman.com">Rob J Hyndman</a> notes that netlify has an
+easy way to setup redirects from your domain!</p>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+I think netlify can do something similar. See <a href="https://docs.netlify.com/routing/redirects">docs.netlify.com/routing/redirects</a>
+</p>
+— Rob J Hyndman (<span class="citation">@robjhyndman</span>) <a href="https://twitter.com/robjhyndman/status/1219880800935501824?ref_src=twsrc%5Etfw">January 22, 2020</a>
+</blockquote>
+<p>Let’s see if I can get this to work!
+According to the netlify documentation, there are two ways to do redirects.
+One is fairly simple, but less powerful.
+I like simple, so I’ll go with that.</p>
+<p>Here are the steps:</p>
+<ol style="list-style-type: decimal">
+<li>Create the following file: <code>static/_redirects</code></li>
+<li><p>Fill it with urls like so:</p>
+<pre><code># Redirect from yourdomain.com*, to url
+/orcid        https://orcid.org/0000-0002-4648-654X
+/researchgate https://www.researchgate.net/profile/Eric_Bryant
+/twitter      https://twitter.com/EricBryantPhD
+/github       https://github.com/EricBryantPhD</code></pre></li>
+</ol>
+<p>Now, I can share my ORCID profile with
+<a href="https://ericbryantphd.com/orcid">ericbryantphd.com/orcid</a>.
+🥳</p>
+<p>Of course, the downside of this is that it isn’t really clear that these links
+will redirect, which is not very transparent (i.e. kinda rude actually) as
+noted by Danielle:</p>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+I kind of like it. I really like the fact that there's some transparency to the process because it's a .link domain. <br><br>Anything at <a href="https://djnavarro.net">djnavarro.net</a> is my own website, anything at <a href="https://djnavarro.link">djnavarro.link</a> goes elsewhere 🙂
+</p>
+— Danielle Navarro (<span class="citation">@djnavarro</span>) <a href="https://twitter.com/djnavarro/status/1220086435295793152?ref_src=twsrc%5Etfw">January 22, 2020</a>
+</blockquote>
+<p>For this use case though, I think it is fairly clear that e.g.
+<a href="https://ericbryantphd.com/orcid">ericbryantphd.com/orcid</a> will take you to a
+page having something to do with ORCID, and e.g.
+<a href="https://ericbryantphd.com/github">ericbryantphd.com/github</a> will take you to
+a page having something to do with GitHub, so I’m sticking to it!</p>
