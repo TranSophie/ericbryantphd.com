@@ -29,7 +29,7 @@ Updated 2020-01-13
 Having recently completed my PhD at Columbia University, I am excited to
 announce that...
 
-**I am officially on the post-doc job market**! `r emoji("celebrate")`
+**I am officially on the postdoc job market**! `r emoji("celebrate")`
 
 Please [contact me](mailto:EricBryantPhD@gmail.com) if you are looking for
 someone with an interest and expertise in any of the following areas:
@@ -59,9 +59,9 @@ which includes links to
 
 ## What am I looking for?
 
-While my pre-doctoral work was focused on molecular biology methods at a gene
+While my predoctoral work was focused on molecular biology methods at a gene
 synthesis startup company, and my doctoral work was a balance between yeast
-genetics and bioinformatics, my ideal post-doctoral position would allow me to
+genetics and bioinformatics, my ideal postdoctoral position would allow me to
 focus more specifically on bioinformatics work.
 
 I am especially interested in projects involving the measurement, and
@@ -87,7 +87,7 @@ I might be even remotely interested, please reach out and let's have a fun
 chat!
 
 
-## Beyond the post-doc?
+## Beyond the postdoc?
 
 This is somewhat in the "dream" category for me at the moment, but I would
 love to develop and teach an introductory course on reproducible data analysis
