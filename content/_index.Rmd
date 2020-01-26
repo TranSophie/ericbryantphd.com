@@ -24,13 +24,10 @@ author: Eric Edward Bryant
 -------------------------------------------------------------------------------
 
 <span class="article-date">
-Updated 2020-01-13
+Updated `r Sys.Date()`
 </span>
 
-Having recently completed my PhD at Columbia University, I am excited to
-announce that...
-
-**I am officially on the postdoc job market**! `r emoji("celebrate")`
+I am officially on the postdoc job market! `r emoji("celebrate")`
 
 Please [contact me](mailto:EricBryantPhD@gmail.com) if you are looking for
 someone with an interest and expertise in any of the following areas:
