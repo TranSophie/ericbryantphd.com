@@ -1,6 +1,7 @@
 # Redirects from what the browser requests to what we serve
 /orcid        https://orcid.org/0000-0002-4648-654X
 /researchgate https://www.researchgate.net/profile/Eric_Bryant
+/linkedin     https://www.linkedin.com/in/ericbryantphd
 /twitter      https://twitter.com/EricBryantPhD
 /github       https://github.com/EricBryantPhD
 /dissertation https://ericbryantphd.com/2020/01/09/phd-dissertation
