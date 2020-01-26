@@ -38,10 +38,11 @@ knitr::opts_knit$set(root.dir = here::here())
 
 | Eric Edward Bryant, PhD
 [<i class="fas fa-envelope"></i> Email](mailto:EricBryantPhD@gmail.com) /
-[<i class="fab fa-github"></i> Github](https://github.com/EricBryantPhD) /
-[<i class="fab fa-twitter"></i> Twitter](https://twitter.com/EricBryantPhD)\
-[<i class="fab fa-researchgate"></i> ResearchGate](https://www.researchgate.net/profile/Eric_Bryant) /
-[<i class="fab fa-orcid"></i> ORCID](https://orcid.org/0000-0002-4648-654X)
+[<i class="fab fa-github"></i> Github](https://ericbryantphd.com/github) /
+[<i class="fab fa-twitter"></i> Twitter](https://ericbryantphd.com/twitter)\
+[<i class="fab fa-researchgate"></i> ResearchGate](https://ericbryantphd.com/researchgate) /
+[<i class="fab fa-orcid"></i> ORCID](https://ericbryantphd.com/orcid) /
+[<i class="fab fa-linkedin"></i> LinkedIn](https://ericbryantphd.com/linkedin)
 
 
 -------------------------------------------------------------------------------
