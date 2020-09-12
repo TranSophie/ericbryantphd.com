@@ -14,8 +14,7 @@ tags:
 
 
 
-<p>🥳
-I’m finally on the internet!</p>
+<p>I’m finally on the internet!</p>
 <p>Why did this take so long?
 About once every year I sit down to create a website.
 Every year I discover a new tool, or framework, or hosting solution.
@@ -23,9 +22,8 @@ I spend a day reading about all my options, build 50% of a site,
 encounter some annoying, or disappointing, or confusing, or costly
 aspect of my new site, and just decide to revisit the whole thing some other
 time.<br />
-💻🗑🔥😭</p>
-<p>This year appears to be different!
-🍾💃</p>
+</p>
+<p>This year appears to be different!</p>
 <p>I knew I wanted something simple<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, stable<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, mobile-friendly<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>,
 easy to maintain<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, and ideally free<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>—bonus points if I can write
 content in <a href="https://bookdown.org/yihui/rmarkdown">rmarkdown</a>.
@@ -107,12 +105,10 @@ to the fonts with <code>../webfonts/</code>, so I assume the name and location o
 folder is important).
 Then after poking around in the theme’s HTML partials, I saw something that
 suggested I should be able to add custom CSS through <code>config.toml</code>, but
-I failed to figure that out,
-🤦
-so I just overrode <code>head.html</code> and added the following line beneath the other
+I failed to figure that out,</p>
+<p>so I just overrode <code>head.html</code> and added the following line beneath the other
 CSS entries.
-Not super elegant, but it works!
-🤷</p>
+Not super elegant, but it works!</p>
 <pre class="html"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ &quot;css/fontawesome.css&quot; | relURL }}&quot;&gt;</code></pre>
 <p>Then, to get icons in my navigation bar I ended up having to override
 <code>layouts/partials/nav.html</code>.
@@ -165,7 +161,6 @@ and so far I’m pretty happy with the results.</p>
 I just put the project on <a href="https://github.com">GitHub</a>, and went to <a href="https://www.netlify.com">Netlify</a>.
 There I logged in via GitHub (super convenient!) and clicked on
 “New site from Git”.</p>
-<p><img src="/images/2019-12-netlify.png" style="width:80.0%" /></p>
 <p>The interface on Netlify was super clear.
 You are given a subdomain on Netlify, so you can stop at this point for
 a completely free solution.
@@ -176,18 +171,17 @@ We’re live!</p>
 <a href="https://github.com/yihui/hugo-lithium">lithium</a>, <a href="https://fontawesome.com">fontawesome</a>, <a href="https://github.com">GitHub</a> and <a href="https://www.netlify.com">Netlify</a> for helping me build a
 website!
 And a special thanks to <a href="https://yihui.org/en">Yihui Xie</a> for writing the <a href="https://bookdown.org/yihui/blogdown">blogdown</a> book—it was
-easy to follow and had just the right amount of detail for me.
-😄</p>
+easy to follow and had just the right amount of detail for me.</p>
 <p>If you have any questions about my setup, or just want to say hi, message me on
 <a href="https://twitter.com/ericedwrdbryant"><i class="fab fa-twitter"></i> Twitter</a>!</p>
 </div>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>“Simple” in my case just means I get a landing page, a page for my CV, and a page for new ongoing content<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>“Stable” just means that I can let my site sit for years and it will still work without intervention. I have always wanted a blog to neglect and I will be very happy when someone 10 years from now says, “wow, your website is <em>very</em> 2019”<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>“Mobile-friendly” just means Eric’s-phone-friendly<a href="#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>“Easy to maintain” just means I can use technologies that I already know (e.g. R, markdown, git, GitHub—keep the HTML, CSS, JS, PHP to a minimum please!)<a href="#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>“Free” as in less than half the cost of a Netflix subscription<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>“Simple” in my case just means I get a landing page, a page for my CV, and a page for new ongoing content<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>“Stable” just means that I can let my site sit for years and it will still work without intervention. I have always wanted a blog to neglect and I will be very happy when someone 10 years from now says, “wow, your website is <em>very</em> 2019”<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>“Mobile-friendly” just means Eric’s-phone-friendly<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>“Easy to maintain” just means I can use technologies that I already know (e.g. R, markdown, git, GitHub—keep the HTML, CSS, JS, PHP to a minimum please!)<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>“Free” as in less than half the cost of a Netflix subscription<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>

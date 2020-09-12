@@ -22,7 +22,7 @@ tags:
 [fontawesome]: https://fontawesome.com
 [Yihui Xie]: https://yihui.org/en
 
-`r emoji("partying_face")`
+
 I'm finally on the internet!
 
 Why did this take so long?
@@ -32,10 +32,10 @@ I spend a day reading about all my options, build 50% of a site,
 encounter some annoying, or disappointing, or confusing, or costly
 aspect of my new site, and just decide to revisit the whole thing some other 
 time.\
-`r emoji("computer", "wastebasket", "fire", "sob")`
+
 
 This year appears to be different!
-`r emoji("champagne", "dancing")`
+
 
 I knew I wanted something simple[^1], stable[^2], mobile-friendly[^3],
 easy to maintain[^4], and ideally free[^5]---bonus points if I can write
@@ -135,11 +135,11 @@ folder is important).
 Then after poking around in the theme's HTML partials, I saw something that
 suggested I should be able to add custom CSS through `config.toml`, but
 I failed to figure that out,
-`r emo::ji("person_facepalming")`
+
 so I just overrode `head.html` and added the following line beneath the other
 CSS entries.
 Not super elegant, but it works!
-`r emo::ji("person_shrugging")`
+
 
 ```html
 <link rel="stylesheet" href="{{ "css/fontawesome.css" | relURL }}">
@@ -218,7 +218,6 @@ I just put the project on [GitHub], and went to [Netlify].
 There I logged in via GitHub (super convenient!) and clicked on
 "New site from Git".
 
-![](/images/2019-12-netlify.png){width="80%"}
 
 The interface on Netlify was super clear.
 You are given a subdomain on Netlify, so you can stop at this point for 
@@ -232,7 +231,7 @@ I want to give a huge thanks to the developers of [hugo], [blogdown],
 website!
 And a special thanks to [Yihui Xie] for writing the [blogdown] book---it was
 easy to follow and had just the right amount of detail for me.
-`r emo::ji("smile")`
+
 
 If you have any questions about my setup, or just want to say hi, message me on
 [<i class="fab fa-twitter"></i> Twitter](https://twitter.com/ericedwrdbryant)!

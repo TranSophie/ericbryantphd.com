@@ -252,11 +252,4 @@ xfun::embed_file(
   text = 'CV (.pdf)'
 )
 ```
-\ /\ \ <i class="far fa-file-alt"></i>
-```{r echo = FALSE}
-xfun::embed_file(
-  "static/references/library.bib",
-  name = "eric-edward-bryant.bib",
-  text = 'References (.bib)'
-)
-```
+

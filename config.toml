@@ -1,8 +1,8 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Eric Bryant, PhD"
+title = "Sophie Tran"
 theme = "hugo-lithium"
-googleAnalytics = "UA-154370842-1"
+googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
@@ -23,7 +23,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     weight = 2
 
 [params]
-    owner = "Eric Bryant, PhD"
+    owner = "Sophie Tran"
     description = "A website built with Hugo via blogdown."
 
     # options for highlight.js (version, additional languages, and theme)
